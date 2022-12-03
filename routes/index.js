@@ -3,11 +3,10 @@ const express = require('express')
 const router = express.Router()
 
 // 載入controller
-const fakeclassController = require('../controller/fake-class-contoller')
+const fakeclassController = require('../controllers/fake-class-controller')
 
-// 刪除
-router.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+router.get('/fake-class', fakeclassController.getfakeClass)
+
+router.use('/', (req, res) => res.render('fake-class'))
 
 module.exports = router
