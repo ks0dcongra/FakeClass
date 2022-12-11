@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const app = express()
 const routes = require('./routes')
 const PORT = process.env.PORT || 3000
+const db = require('./models')
 
 // 註冊 Handlebars 樣板引擎，並指定副檔名為 .hbs
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))

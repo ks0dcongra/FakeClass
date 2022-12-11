@@ -17,8 +17,12 @@
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.26.0",
+    "sequelize-cli": "^6.5.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.45.0",
