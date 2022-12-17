@@ -1,6 +1,7 @@
 {
   "name": "fakeclass",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -24,24 +25,13 @@
     "sequelize-cli": "^6.5.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
-    "@typescript-eslint/parser": "^5.46.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
     "eslint": "^8.29.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-vue": "^9.8.0",
     "typescript": "^4.9.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://ks0dcongra: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@github.com/ks0dcongra/FakeClass.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ks0dcongra/FakeClass/issues"
-  },
-  "homepage": "https://github.com/ks0dcongra/FakeClass#readme",
-  "description": ""
+  }
 }
