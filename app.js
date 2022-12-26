@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const app = express()
 const routes = require('./routes')
 const PORT = process.env.PORT || 3000
+const passport = require('./config/passport') // 增加這行，引入 Passport
 
 // 新增以下兩行，引入套件flash套件
 const flash = require('connect-flash')
@@ -19,6 +20,8 @@ app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true })) // body-parser解析controller的body方法
 app.use(methodOverride('_method'))
 app.use(session({ secret: SESSION_SECRET, resave: false, saveUninitialized: false }))
+app.use(passport.initialize()) // 增加這行，初始化 Passport
+app.use(passport.session()) // 增加這行，啟動 session 功能
 app.use(flash()) // 掛載套件
 app.use((req, res, next) => {
   console.log(res)

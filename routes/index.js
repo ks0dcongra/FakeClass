@@ -6,6 +6,10 @@ const admin = require('./modules/admin')
 const fakeclassController = require('../controllers/fake-class-controller')
 const userController = require('../controllers/user-controller')
 const { generalErrorHandler } = require('../middleware/error-handler') // flash-message讓錯誤資訊傳遞下去
+const passport = require('../config/passport') // 引入 Passport，需要他幫忙做驗證
+
+router.get('/signin', userController.signInPage)
+router.post('/signin', passport.authenticate('local', { failureRedirect: '/signin', failureFlash: true }), userController.signIn) // 驗證第三方登入工具
 
 router.use('/admin', admin)
 router.get('/signup', userController.signUpPage)
