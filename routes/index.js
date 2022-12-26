@@ -5,6 +5,7 @@ const admin = require('./modules/admin')
 // 載入 controller
 const fakeclassController = require('../controllers/fake-class-controller')
 const userController = require('../controllers/user-controller')
+const { authenticated } = require('../middleware/auth') // 驗證是否登入
 const { generalErrorHandler } = require('../middleware/error-handler') // flash-message讓錯誤資訊傳遞下去
 const passport = require('../config/passport') // 引入 Passport，需要他幫忙做驗證
 
@@ -14,7 +15,8 @@ router.post('/signin', passport.authenticate('local', { failureRedirect: '/signi
 router.use('/admin', admin)
 router.get('/signup', userController.signUpPage)
 router.post('/signup', userController.signUp)
-router.get('/fake-class', fakeclassController.getfakeClass)
+router.get('/logout', userController.logout)
+router.get('/fake-class', authenticated, fakeclassController.getfakeClass)
 router.use('/', (req, res) => res.render('fake-class'))
 router.use('/', generalErrorHandler) // flash-message讓錯誤資訊傳遞下去
 
